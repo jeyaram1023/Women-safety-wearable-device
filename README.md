@@ -90,7 +90,7 @@ The local web app (HTML5, CSS3, JavaScript) provides:
 ---
 
 ## 🎬 Demo
-
+watch_circuit.png
 ![Demo GIF](https://via.placeholder.com/600x300.png?text=Demo+GIF)
 
 **Demo Steps:**  
