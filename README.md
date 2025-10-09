@@ -1,6 +1,6 @@
 # Women Safety Device: ESP32 Watch and ESP8266 Smart Shoe
 
-[![Project Banner](https://i.ibb.co/cK65J10p/Picsart-25-10-09-17-54-19-962.png)]()
+![Project Banner](https://i.ibb.co/cK65J10p/Picsart-25-10-09-17-54-19-962.png)
 
 [![GitHub stars](https://img.shields.io/github/stars/jeyaram1023/Women-safety-wearable-device?style=social)](https://github.com/jeyaram1023/Women-safety-wearable-device/stargazers) 
 [![GitHub forks](https://img.shields.io/github/forks/jeyaram1023/Women-safety-wearable-device?style=social)](https://github.com/jeyaram1023/Women-safety-wearable-device/network/members) 
