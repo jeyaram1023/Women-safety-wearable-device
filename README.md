@@ -1,125 +1,106 @@
-# 👩‍💻 Women Safety Device (Watch + Smart Slippers)
+# Women Safety Device: ESP32 Watch and ESP8266 Smart Shoe
 
-![Project Banner](https://via.placeholder.com/800x200.png?text=Women+Safety+Device)
+[![Project Banner](https://i.ibb.co/cK65J10p/Picsart-25-10-09-17-54-19-962.png)]()
 
-[![Blogger](https://img.shields.io/badge/Blogger-Read_More-orange)](http://jeyaramb.blogspot.com/2025/)  
-[![YouTube](https://img.shields.io/badge/YouTube-Watch_Demo-red)](https://www.youtube.com/watch?v=YOUR_VIDEO_LINK)  
-[![License](https://img.shields.io/badge/License-Educational-blue)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/jeyaram1023/Women-safety-wearable-device?style=social)](https://github.com/jeyaram1023/Women-safety-wearable-device/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/jeyaram1023/Women-safety-wearable-device?style=social)](https://github.com/jeyaram1023/Women-safety-wearable-device/network/members) 
+[![GitHub issues](https://img.shields.io/github/issues/jeyaram1023/Women-safety-wearable-device)](https://github.com/jeyaram1023/Women-safety-wearable-device/issues) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/Platform-ESP32--ESP8266-blue)](https://www.espressif.com)
+[![Language](https://img.shields.io/badge/Language-C++-brightgreen)](https://isocpp.org/)
+[![Arduino IDE](https://img.shields.io/badge/Arduino%20IDE-2.3.6-orange?logo=arduino)](https://www.arduino.cc/en/software)
 
----
+This project is a **complete IoT solution for women’s personal safety**. It combines a wearable **ESP32 Watch module** and a connected **ESP8266-based Smart Shoe**, linked with the ESP-NOW wireless protocol for fast emergency communication. The system enables instant distress alerts, vital health data transmission, and automated location sharing to trusted contacts.
 
-## 🔎 Project Overview
+## 💡 Problem Statement
 
-The **Women Safety Device** is an advanced dual-module IoT system designed to enhance personal safety for women. It consists of:  
+Despite modern advances, women's safety remains a critical issue. This device provides immediate, hands-free emergency notifications with GPS tracking and health monitoring to enhance personal security.
 
-1. **Smart Watch Module** – monitors user movement, health parameters, and triggers emergency alerts.  
-2. **Smart Slippers Module** – receives alerts, activates deterrent systems, and sends GPS/GSM location to emergency contacts.  
+## 🚀 Solution Overview
 
-The system uses **ESP32 and ESP8266 microcontrollers** and communicates via **ESP-NOW protocol** for fast, low-power, and reliable signal transfer between modules.  
+- Wearable watch module monitors movement, pulse, gas levels, and manual emergency button.
+- Smart shoe module receives emergency alerts, activates GPS & GSM, and sends SMS with location.
+- Each module displays battery status and health info on an LCD.
+- Local web applications hosted on both devices allow real-time monitoring and control.
 
-> ⚠️ The static electric deterrent is **simulated for demonstration purposes**, and no harmful currents are used.
+## 📺 Demo Video
 
----
+[![Watch the Demo](https://img.youtube.com/vi/YOUR_YOUTUBE_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID)
 
-## 🧩 Technical Logic & How It Works
+Click the image to watch the demo video on YouTube.
 
-### 1. Emergency Activation Logic
-Emergency mode can be activated by either:
+## 📷 Project Image
 
-- **Manual Activation:** Long press the watch button for 3 seconds  
-- **Automatic Activation:** Abnormal shaking or sudden movement detected for >5 seconds via the **ADXL335 accelerometer**  
+![Women Safety Device](https://i.ibb.co/LDQQ8244/shoe-circuit.png)
+![Women Safety Device](https://i.ibb.co/39bMVzYP/watch-circuit.png)
 
-Once activated:  
-- Watch LCD shows *“Women Safety Device Activated”*  
-- Buzzer sounds for 3 seconds  
-- Gas sensor readings and heart rate are recorded  
-- Watch sends an emergency packet via **ESP-NOW** to the slippers  
+*Photo: The Women Safety Device with Watch and Smart Shoe modules.*
 
----
+## 🛠️ Features
 
-### 2. Smart Slippers Module Logic
-Upon receiving the emergency packet:  
+- Emergency activation by 3-second button press or 5-second shaking detection.
+- Triple-click the button to deactivate emergency mode.
+- Instant wireless signal transmission to shoe module.
+- GPS location and health stats sent via SMS to 4 emergency contacts.
+- Faint/unconscious user detection triggers special alert.
+- Real-time system status on local web app.
+- Battery monitoring on both modules.
 
-- **Deterrent Activation:** Non-injurious deterrent simulation (alarm, strobe, vibration) representing a **static electric deterrent** to repel attackers and allow safe escape  
-- **GPS Activation:** Acquires current location  
-- **GSM Alerts:** Sends SMS with location and emergency details to pre-configured contacts  
-- **Battery & Sensor Update:** Reports status back to the web dashboard  
+## 🔌 Hardware Overview
 
-If the watch detects **no movement post-activation**, an additional alert is sent:  
-> *“User has fainted and fallen down.”*
+| Module        | Components                                  |
+|---------------|---------------------------------------------|
+| Watch Module  | ESP32, ADXL335 accelerometer, MQ-135 gas sensor, heart rate sensor, 16x2 I2C LCD, push button, buzzer, DS3231 RTC, status LED, 18650 battery |
+| Shoe Module   | ESP8266 NodeMCU, GPS Neo-6M, SIM800L GSM module, 16x2 I2C LCD, digital pins GPIO14 & GPIO16, status LED, 18650 battery (dual recommended), SIM card |
 
----
+## ⚙️ Installation & Setup
 
-### 3. Deactivation Logic
-- Triple-press the watch button → disables emergency mode  
-- Sends a **cancel packet** to slippers → turns off GPS, GSM, and deterrents  
-- Web dashboard updates to reflect system deactivation  
+1. Clone the repository:
 
----
+git clone https://github.com/jeyaram1023/Women-safety-wearable-device.git
 
-### 4. Web App Integration
-The local web app (HTML5, CSS3, JavaScript) provides:  
 
-- Real-time **battery percentages** of watch and slippers  
-- Current **GPS location** of the user  
-- Heart rate and gas sensor data from the watch  
-- History of all emergency notifications  
-- Ability to **add/edit emergency contacts** and manage alerts  
+2. Install Arduino IDE 2.3.6 with ESP32 and ESP8266 board support.
 
----
+3. Install required libraries:
 
-## ⚡ Features Summary
+- LiquidCrystal_I2C
+- RTClib
+- TinyGPS++
+- ArduinoJson
 
-| Module          | Features |
-|-----------------|---------|
-| **Smart Watch** | Emergency activation via button or accelerometer, LCD display, buzzer alert, heart rate & gas sensor readings, ESP-NOW communication |
-| **Smart Slippers** | Receive emergency packet, activate static electric deterrent simulation, send GPS/GSM alerts, update web dashboard |
-| **Web App**     | View real-time battery %, GPS, health data, emergency log, manage contacts |
+4. Upload `Women-Safety-Device-ESP8266-002.ino` first:
 
----
+- Copy the MAC address from Serial Monitor.
+- Update the MAC in the Watch module code.
 
-## 🛠 Tech Stack & Components
+5. Upload `Women-Safety-Device-ESP32-002.ino` with updated MAC address.
 
-- **Microcontrollers:** ESP32 (Watch), ESP8266 (Slippers)  
-- **Sensors:** ADXL335 Accelerometer, Heart Rate Sensor, Gas Sensor (MQ-135)  
-- **Modules:** GPS (NEO-6M), GSM (SIM800L), LCD (16x2 I2C), Buzzer  
-- **Communication:** ESP-NOW, GSM SMS  
-- **Frontend:** HTML5, CSS3, JavaScript  
-- **Programming:** Arduino IDE (C/C++)  
+6. Update emergency contact numbers in the Shoe module code, replacing placeholders with real international format numbers.
 
----
+7. Access the web applications by connecting to these WiFi networks:
 
-## 🎬 Demo
+- Watch module: `WomenSafetyWatch` (password: `safety123`) → [http://192.168.4.1](http://192.168.4.1)
+- Shoe module: `WomenSafetyShoe` (password: `safety123`) → [http://192.168.4.1](http://192.168.4.1)
 
-![Demo GIF](https://watch_circuit.png?text=Demo+GIF)
+## 🧪 Testing & Usage
 
-**Demo Steps:**  
-1. Long press watch button or simulate abnormal movement  
-2. Watch triggers LCD message & buzzer  
-3. Slippers activate deterrents and send GPS/GSM alerts  
-4. Web app updates battery %, GPS location, heart rate, and gas levels  
-5. Triple-press watch button to deactivate emergency mode  
+- Test button press, shaking emergency activation.
+- Verify GPS fix and GSM SMS functionality outdoors.
+- Use the web app for monitoring battery, heart rate, gas level and GPS location.
+- Triple press button for emergency deactivation.
 
----
+## 📋 License
 
-## 🔗 Project Links
+This project is licensed under the MIT License.
 
-- **Blogger Post / Detailed Explanation:** [http://jeyaramb.blogspot.com/2025/](http://jeyaramb.blogspot.com/2025/)  
-- **YouTube Demo Video:** [https://www.youtube.com/watch?v=YOUR_VIDEO_LINK](https://www.youtube.com/watch?v=YOUR_VIDEO_LINK)  
+## 👩‍💻 Author
+
+- [JEYARAM B](https://github.com/jeyaram1023)
+- [Call](tel:8309631052)
+- [Email](mailto:jeyaram.reddy.ece@gmail.com)
 
 ---
 
-## 🚀 Future Upgrades
+Feel free to star ⭐ the repo if you find this project helpful!
 
-- Mobile app for real-time notifications and remote monitoring  
-- Cloud-based monitoring for multiple users simultaneously  
-- AI-based fall detection for higher accuracy  
-- Improved deterrent simulation with more interactive feedback  
-
----
-
-## 📜 License
-
-This project is for **educational and personal use only**.  
-The static electric deterrent is **simulated** and non-injurious.  
-Please follow safety and legal guidelines when replicating this project.
