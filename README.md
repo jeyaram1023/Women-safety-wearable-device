@@ -1,6 +1,7 @@
 # Women Safety Device: ESP32 Watch and ESP8266 Smart Shoe
 
-[![Project img](https://i.ibb.co/cK65J10p/Picsart-25-10-09-17-54-19-962.png)](https://i.ibb.co/SXW3fR1t/women-safety-device-banner.jpg)
+![women-safety-device-banner](https://github.com/user-attachments/assets/58662870-e509-44ed-b313-93e9a706b63d)
+
 
 [![GitHub stars](https://img.shields.io/github/stars/jeyaram1023/Women-safety-wearable-device?style=social)](https://github.com/jeyaram1023/Women-safety-wearable-device/stargazers) 
 [![GitHub forks](https://img.shields.io/github/forks/jeyaram1023/Women-safety-wearable-device?style=social)](https://github.com/jeyaram1023/Women-safety-wearable-device/network/members) 
@@ -25,15 +26,18 @@ Despite modern advances, women's safety remains a critical issue. This device pr
 
 ## 📺 Demo Video
 
-[![Watch the Demo](https://img.youtube.com/vi/YOUR_YOUTUBE_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID)
+
 
 Click the image to watch the demo video on YouTube.
 
 ## 📷 Project Image
 
-![Women Safety Device](https://i.ibb.co/LDQQ8244/shoe-circuit.png)
-![Women Safety Device](https://i.ibb.co/39bMVzYP/watch-circuit.png)
-![Project img](https://i.ibb.co/SXW3fR1t/women-safety-device-banner.jpg)
+<img width="4096" height="2599" alt="watch_circuit" src="https://github.com/user-attachments/assets/ec52d450-5cfc-448b-8bd3-a33c9e0da80c" />
+
+<img width="3264" height="2888" alt="shoe_circuit" src="https://github.com/user-attachments/assets/601ab661-d085-478b-8e5e-88e36133b430" />
+
+
+
 *Photo: The Women Safety Device with Watch and Smart Shoe modules.*
 
 ## 🛠️ Features
@@ -94,11 +98,16 @@ git clone https://github.com/jeyaram1023/Women-safety-wearable-device.git
 
 This project is licensed under the MIT License.
 
-## 👩‍💻 Author
+## 👨‍💻 About the Developer
 
-- [JEYARAM B](https://github.com/jeyaram1023)
-- [Call](tel:8309631052)
-- [Email](mailto:jeyaram.reddy.ece@gmail.com)
+**Name:** Jeyaram Reddy  
+**Email:** jeyaram.reddy.ece@gmail.com  
+**GitHub:** [jeyaram1023](https://github.com/jeyaram1023)  
+**LinkedIn:** [Jeyaram B](https://www.linkedin.com/in/jeyaram-ece-reddy)  
+**Portfolio**[Click here](https://jeyaram1023.github.io/My-portfolio/).
+
+**Location:** India  
+**Status:** Open to collaboration & freelance automation gigs!
 
 ---
 
